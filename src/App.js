@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './pages/Header';
+import Home from './pages/Home';
+import MensOuterwear from './components/MensOuterwearSection/MensOuterwear';
+import LadiesOuterwear from './components/LadiesOuterwearSection/LadiesOuterwear';
+import MensTShirts from './components/MensTShirtsSection/MensTShirts';
+import LadiesTShirts from './components/LadiesTShirtsSection/LadiesTShirts';
+import ItemDetails from './components/ItemsDetals/ItemDetails';
+import ViewCart from './components/ViewCartSection/ViewCart'
+import Footer from './pages/Footer';
+ 
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='w-full h-full'>
+        <Header />
+        <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/mens-outerwear" element={<MensOuterwear/>} />
+        <Route path="/ladies-outerwear" element={<LadiesOuterwear/>} />
+        <Route path="/mens-t-shirts" element={<MensTShirts/>} />
+        <Route path="/ladies-t-shirts" element={<LadiesTShirts/>} />
+        <Route path="/item/:category/:itemName" element={<ItemDetails />} />
+        <Route path="/cart" element={<ViewCart/>} />
+        </Routes>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
