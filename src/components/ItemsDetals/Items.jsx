@@ -23,7 +23,9 @@ const Item = ({ baseUrl, items, category }) => {
             </div>
           ))}
         </div>
+        
       </div>
+      
     </div>
   );
 };

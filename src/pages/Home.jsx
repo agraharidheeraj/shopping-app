@@ -13,9 +13,9 @@ const Home = () => {
           />
           <h1>Men's Outerwear</h1>
           <Link to="/mens-outerwear">
-          <button className="border-solid border-2 border-black p-2 pl-8 pr-8 ">
-            SHOP NOW
-          </button>
+            <button className="border-solid border-2 border-black p-2 pl-8 pr-8 ">
+              SHOP NOW
+            </button>
           </Link>
         </div>
         <div className="flex flex-col items-center gap-6 mb-12  justify-center">
@@ -24,10 +24,10 @@ const Home = () => {
             alt="Ladies Outerwear"
           />
           <h1>Ladies Outerwear</h1>
-          <Link to="/mens-outerwear">
-          <button className="border-solid border-2 border-black p-2 pl-8 pr-8 ">
-            SHOP NOW
-          </button>
+          <Link to="/ladies-outerwear">
+            <button className="border-solid border-2 border-black p-2 pl-8 pr-8 ">
+              SHOP NOW
+            </button>
           </Link>
         </div>
         <div className="flex">
@@ -38,9 +38,11 @@ const Home = () => {
               alt="Men's T-Shirts"
             />
             <h1>Men's T-Shirts</h1>
+            <Link to="/mens-t-shirts">
             <button className="border-solid border-2 border-black p-2 pl-8 pr-8 ">
               SHOP NOW
             </button>
+            </Link>
           </div>
           <div className="flex flex-col items-center gap-6 mb-12 justify-center ">
             <img
@@ -49,9 +51,11 @@ const Home = () => {
               alt="Ladies T-Shirts"
             />
             <h1>Ladies T-Shirts</h1>
+            <Link to="/ladies-t-shirts">
             <button className="border-solid border-2 border-black p-2 pl-8 pr-8 ">
               SHOP NOW
             </button>
+            </Link>
           </div>
         </div>
       </div>

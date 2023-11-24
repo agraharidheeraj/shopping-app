@@ -3,7 +3,10 @@ import Item from "../ItemsDetals/Items";
 import {ladiesOuterwearItems} from '../../ItemsData/ItemData'
 import ItemDetails from "../ItemsDetals/ItemDetails";
 
+
+
 const LadiesOuterwear = () => {
+   
     const baseUrl = "https://shop.polymer-project.org/esm-bundled/";
 
   return (

@@ -34,7 +34,7 @@ const ItemDetails = () => {
   };
 
   if (!selectedItem) {
-    return <div>Item not found</div>;
+    return <div></div>;
   }
 
   return (
@@ -45,7 +45,7 @@ const ItemDetails = () => {
       <div className="flex flex-col md:flex-row items-center">
         <div className="md:w-1/2">
           <img
-            src={`https://shop.polymer-project.org/esm-bundled/${selectedItem.largeImage}`}
+            src={`https://shop.polymer-project.org/esm-bundled/${selectedItem.image}`}
             alt={selectedItem.title}
             className="w-full h-auto mt-10"
           />

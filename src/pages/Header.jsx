@@ -20,8 +20,9 @@ const Header = () => {
           <div className="text-xl font-bold tracking-widest ml-auto cursor-pointer">SHOP</div>
         </Link>
         <Link to="/cart">
-        <div className="absolute right-6 text-xl">
-          <FaShoppingCart /><span>{totalQuantity}</span>
+        <div className="absolute right-8 text-xl">
+          <FaShoppingCart />
+          <span className='absolute top-[-1rem] left-3 bg-gray-700 text-white text-sm font-medium rounded-full px-2 py-[2px] '>{totalQuantity}</span>
         </div>
         </Link>
       </div>

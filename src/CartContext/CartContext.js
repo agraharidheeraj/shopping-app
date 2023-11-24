@@ -9,7 +9,7 @@ const initialState = {
 };
 
 // Define the context
-const CartContext = createContext();
+export const CartContext = createContext();
 
 // Define the reducer function
 const cartReducer = (state, action) => {
@@ -49,6 +49,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = (item) => {
     dispatch({ type: 'ADD_TO_CART', payload: item });
   };
+
 
   // Load cart from localStorage on component mount
   useEffect(() => {
