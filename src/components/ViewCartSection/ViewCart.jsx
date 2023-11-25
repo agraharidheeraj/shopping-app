@@ -26,8 +26,8 @@ const Cart = () => {
       ) : (
         <>
           {state.items.map((item, index) => (
-            <div key={index} className="border p-4  items-center mb-4 w-[80%] m-auto flex justify-between">
-                <div className='flex items-center'>
+            <div key={index} className="border p-4 items-center mb-4 w-[80%] m-auto flex justify-between">
+                <div className='flex items-center justify-start ml-4'>
                 <img
                 src={`https://shop.polymer-project.org/esm-bundled/${item.largeImage}`}
                 alt={item.title}
@@ -37,11 +37,9 @@ const Cart = () => {
                 </div>
               
 
-              <div className="flex justify-between gap-12  items-center">
-                <div className="flex items-center space-x-4">
+              <div className="flex justify-center  gap-12 items-center">
                   <p>Quantity: {item.quantity}</p>
-                </div>
-                {item.size && <p>Size: {item.size}</p>}
+               {item.size && <p>Size: {item.size}</p>}
                 <p>Price: ${item.price !== undefined ? item.price.toFixed(2) : 'N/A'}</p>
               </div>
               <button
