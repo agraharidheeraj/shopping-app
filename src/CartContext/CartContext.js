@@ -1,5 +1,3 @@
-// CartContext.js
-
 import React, { createContext, useContext, useReducer, useEffect, useState } from 'react';
 
 // Initial state for the cart
