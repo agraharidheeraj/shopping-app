@@ -8,6 +8,7 @@ import MensTShirts from './components/MensTShirtsSection/MensTShirts';
 import LadiesTShirts from './components/LadiesTShirtsSection/LadiesTShirts';
 import ItemDetails from './components/ItemsDetals/ItemDetails';
 import ViewCart from './components/ViewCartSection/ViewCart'
+import CheckoutPage from './components/CheckoutSection/ItemCheckout';
 import Footer from './pages/Footer';
  
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/ladies-t-shirts" element={<LadiesTShirts/>} />
         <Route path="/item/:category/:itemName" element={<ItemDetails />} />
         <Route path="/cart" element={<ViewCart/>} />
+        <Route path='/checkout' element={<CheckoutPage/>}/>
         </Routes>
         <Footer/>
       </div>

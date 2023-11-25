@@ -17,17 +17,19 @@ const ItemDetails = () => {
   const { addToCart } = useCart();
 
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState('extrasmall');
 
   const selectedItem = mensOuterwearItems.find(
     (item) => decodeURIComponent(item.name) === itemName
   );
 
   const [showPopup, setShowPopup] = useState(false);
-
+  
   const handleAddToCart = () => {
-    addToCart({ ...selectedItem, quantity: selectedQuantity }); // Make sure to pass quantity
+    addToCart({ ...selectedItem, quantity: selectedQuantity, size: selectedSize });
     setShowPopup(true);
   };
+  
 
   const handleClosePopup = () => {
     setShowPopup(false);
@@ -63,6 +65,8 @@ const ItemDetails = () => {
               <select
                 id="size"
                 className="p-2 appearance-none bg-transparent border-none outline-none mr-[19rem] ml-5"
+                onChange={(e) => setSelectedSize(e.target.value)}
+                value={selectedSize}
               >
                 <option value="extrasmall">XS</option>
                 <option value="small">S</option>

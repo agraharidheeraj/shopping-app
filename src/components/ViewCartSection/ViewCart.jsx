@@ -1,5 +1,7 @@
 import React from 'react';
 import { useCart } from '../../CartContext/CartContext';
+import { Link } from 'react-router-dom';
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const Cart = () => {
   const { state, dispatch } = useCart(); 
@@ -9,20 +11,15 @@ const Cart = () => {
     dispatch({ type: 'DELETE_ITEM', payload: { index } });
   };
 
-  const handleIncreaseQuantity = (index) => {
-  
-  };
-
-  const handleDecreaseQuantity = (index) => {
-
-  };
-
   const calculateTotalAmount = () => {
     return state.items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
 
   return (
     <div className=' w-full mb-[14rem]'>
+       <Link to={`/item/:category/:itemName`}>
+        <FaArrowLeftLong className="absolute top-12 left-20 text-2xl" />
+        </Link>
       <h2 className="text-2xl font-semibold mb-12 text-center mt-12 ">Your Cart</h2>
       {state.items.length === 0 ? (
         <p>Your cart is empty.</p>
@@ -42,21 +39,9 @@ const Cart = () => {
 
               <div className="flex justify-between gap-12  items-center">
                 <div className="flex items-center space-x-4">
-                  <button
-                    className="text-blue-500 hover:text-blue-700"
-                    onClick={() => handleDecreaseQuantity(index)}
-                  >
-                    -
-                  </button>
                   <p>Quantity: {item.quantity}</p>
-                  <button
-                    className="text-blue-500 hover:text-blue-700"
-                    onClick={() => handleIncreaseQuantity(index)}
-                  >
-                    +
-                  </button>
                 </div>
-                <p>Size: {item.size}</p>
+                {item.size && <p>Size: {item.size}</p>}
                 <p>Price: ${item.price !== undefined ? item.price.toFixed(2) : 'N/A'}</p>
               </div>
               <button
@@ -69,9 +54,11 @@ const Cart = () => {
           ))}
           <div className="mt-8 flex items-center justify-end mr-[9rem] gap-6">
             <p className="text-md mt-4 font-semibold">Total Amount: <span className='ml-8 mr-12'>${calculateTotalAmount()}</span></p>
+            <Link to='/checkout'>
             <button className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
               Checkout
             </button>
+            </Link>
           </div>
         </>
       )}
